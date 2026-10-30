@@ -27,7 +27,7 @@ def put_with_curl(url, chunk):
     """Fallback for Python builds without system certificates (common on macOS)."""
     result = subprocess.run(
         ["curl", "-fsS", "-X", "PUT", "-H", "Content-Type: application/octet-stream",
-         "--data-binary", "@-", "-o", "/dev/null", "-w", "%{http_code}", url],
+         "--data-binary", "@-", "-o", os.devnull, "-w", "%{http_code}", url],
         input=chunk, capture_output=True, timeout=300)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.decode(errors="replace").strip() or "curl failed")

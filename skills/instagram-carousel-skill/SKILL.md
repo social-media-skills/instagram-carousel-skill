@@ -13,7 +13,7 @@ description: >-
   Never invents results, reviews or stories, confirms before anything posts. Standalone: needs
   no other skills.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 license: MIT
 ---
 
